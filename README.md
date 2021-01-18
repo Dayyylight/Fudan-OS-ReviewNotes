@@ -44,7 +44,7 @@
 
 **进程以为自己有独立的主存和CPU资源**！
 
-![jinchengchouxiang](OS进程抽象.png)
+![pic/jinchengchouxiang](OS进程抽象.png)
 
 ##### 进程与操作系统抽象的机器的交互
 
@@ -90,7 +90,7 @@
   * 进程管理table和其他相关信息由OS暂存
   * 辅助程序可以收集信息
 
-![wuzhuangtai](五状态模型.png)
+![pic/wuzhuangtai](五状态模型.png)
 
 （部分系统中，Ready和Blocked的进程也能被直接终止进入exit状态）
 
@@ -301,8 +301,8 @@ OS维护一个进程table，其中的表项为PCB
   
 #### 进程与线程占有的资源对比
 
-![jinchengxianchengziyuan](进程线程资源.png)
-![jinchengxianchengmoxing](进程线程模型.png)
+![pic/jinchengxianchengziyuan](进程线程资源.png)
+![pic/jinchengxianchengmoxing](进程线程模型.png)
 
 #### 线程的栈
 
@@ -398,7 +398,7 @@ OS维护一个进程table，其中的表项为PCB
 * One-to-One：一个用户线程对应一个内核线程
 * Many-to-Many：许多ULT对应更少或相同数量KLT
 
-![ULTKLT](ULTandKLT.png)
+![pic/ULTKLT](ULTandKLT.png)
 
 ### 线程问题
 
@@ -576,7 +576,7 @@ TSL RX, lock
 
 ### 联合进程图
 
-![lianhe](联合进程图.png)
+![pic/lianhe](联合进程图.png)
 
 ### 死锁的必要非充分条件
 
@@ -593,7 +593,7 @@ TSL RX, lock
   * 每种资源只时有一个：死锁已经发生
   * 每种资源有多个：死锁可能发生
 
-![ziyuan](资源分配图.png)
+![pic/ziyuan](资源分配图.png)
 
 ### 四种死锁处理策略
 
@@ -798,7 +798,7 @@ TSL RX, lock
 * User-Oriented：用户/进程体验为中心
 * System-Oriented：处理器利用效率优先
 
-![diaodu](系统目标.png)
+![pic/diaodu](系统目标.png)
 
 #### 先来先服务(FCFS/FIFO)策略
 
@@ -861,7 +861,7 @@ TSL RX, lock
   * I/O阻塞的进程在得到I/O事件后加入这个队列
   * 在辅助队列里的进程有dispatch(调度)优先权
 
-![vrr](VRR.png)
+![pic/vrr](VRR.png)
 
 #### Shortest Process Next最短运行时间
 
@@ -976,7 +976,7 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
 * 但长进程依然可能会starvation
   * 将等待太久的进程放入高优先级队列
 
-![diaoduzongjie](调度总结.png)
+![pic/diaoduzongjie](调度总结.png)
 
 ## Chap7-内存管理
 
@@ -1110,7 +1110,7 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
 * 支持进程间共享段信息
   * 因为段代表的是逻辑信息，而页只代表物理信息
 
-![duanye](分段分页.png)
+![pic/duanye](分段分页.png)
 
 ## Chap8-虚拟内存
 
@@ -1172,7 +1172,7 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
 * 页表表项号就是物理页号
 * 通过hash解决遍历表太慢的问题
 
-![fanxiangyebiao](反向页表.png)
+![pic/fanxiangyebiao](反向页表.png)
 
 ##### Translation Lookaside Buffer
 
@@ -1230,7 +1230,7 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
 
 段页结合：
 
-![duanyejiehe](段页结合.png)
+![pic/duanyejiehe](段页结合.png)
 
 ### OS Software
 
@@ -1538,7 +1538,7 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
   * formatting
 * Spooling：I/O设备虚拟化
 
-![iolayer](IO层.png)
+![pic/iolayer](IO层.png)
 
 ### I/O Buffering
 
@@ -1546,14 +1546,14 @@ $R = \frac{w+s}{s},\ where\ R = response\ ratio,\\ w = time\ spent\ waiting\ for
 
 #### 单缓冲区
 
-![singleb](单缓冲.png)
+![pic/singleb](单缓冲.png)
 
 * 单独一块缓冲区
 * 将每个block的耗时从$T+C$减少到$max(T, C)+M$
 
 #### 双缓冲区
 
-![double](双缓冲.png)
+![pic/double](双缓冲.png)
 
 * 耗时减少到$max(T, C)$
 
@@ -1828,7 +1828,7 @@ UserA's Domain{
 * 分区表内每个表项号对应实际磁盘块号
 * 每个表项存储下一个表项的index，末尾块是特殊的EOF标志
 
-![fat](FAT.png)
+![pic/fat](FAT.png)
 
 * 如果没cache，那访问fat本身也会造成额外的磁盘访问开销
 * 提升了随机访问性能
@@ -1841,10 +1841,10 @@ UserA's Domain{
 * 比chained的pointer开销小
 
 **固定长度按block分配**：
-![dingchang](定长.png)
+![pic/dingchang](定长.png)
 
 **可变长度分配**：
-![bianchang](变长.png)
+![pic/bianchang](变长.png)
 
 ### UNIX文件系统
 
