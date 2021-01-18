@@ -1727,7 +1727,7 @@ $T_{a} = T_{s} + \frac{1}{2r} + \frac{b}{rN}$
 * 每个对象都有一定可以进行的操作，可以组合成(Object, Operation)形式
 * 这种对组合成的集合就是域
 
-```json
+```
 UserA's Domain{
     (File1, (Read, Write))
     (File2, (Read))
